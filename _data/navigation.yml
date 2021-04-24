@@ -1,24 +1,29 @@
-- name: Pricing
+- name: Chi siamo
   link: /pricing/
+  new_window: false
+  highlight: false
+- name: Gli eventi
+  link: /pricing/
+  new_window: false
+  highlight: false
+- name: I partner
+  link: /about/
+  new_window: false
+  highlight: false
+- name: Hall of Fame
+  link: /contact/
+  new_window: false
+  highlight: false
+- name: Sostienici
+  link: /contact/
   new_window: false
   highlight: false
 - name: Blog
   link: /blog/
   new_window: false
   highlight: false
-- name: About
-  link: /about/
-  new_window: false
-  highlight: false
-- name: Contact
-  link: /contact/
-  new_window: false
-  highlight: false
-- name: Login
-  link: /
-  new_window: true
-  highlight: false
-- name: Sign Up
+
+- name: Entra nel Bunker
   link: /
   new_window: true
   highlight: true
