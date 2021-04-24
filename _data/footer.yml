@@ -19,17 +19,17 @@
     new_window: true
 - links:
   - name: Instagram
-    link: https://facebook.com/cloudcannon/
+    link: https://www.instagram.com/codingbunker/
     new_window: true
     social_icon: Instagram
     
   - name: LinkedIn
-    link: https://youtube.com/cloudcannon/
+    link: https://www.linkedin.com/company/coding-bunker/
     social_icon: LinkedIn
     new_window: true
     
   - name: YouTube
-    link: https://youtube.com/cloudcannon/
+    link: https://www.youtube.com/channel/UCVkl7yf00zC1xGuN-nQf9hA
     social_icon: YouTube
     new_window: true
     
