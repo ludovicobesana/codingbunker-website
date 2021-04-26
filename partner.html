@@ -4,17 +4,17 @@ heading: Come diventare nostro Partner
 description: In questa sezione ti spieghiamo perché diventare nostro partner e come puoi entrare in contatto con noi per discutere assieme di nuove iniziative e percorsi che possiamo intraprendere.
 partner_info:
   - name: Invia la richiesta online
-    color: "#8e8e8e"
+    color: "#A576FF"
     features:
       - text: Clicca al bottone qui sotto e verrai rimandato ad un form.
         highlight: true
   - name: Ti contattiamo noi
-    color: "#8e8e8e"
+    color: "#A576FF"
     features:
     - text: Entro 15 giorni organizzeremo una call insieme.
       highlight: true
   - name: Iniziamo a collaborare
-    color: "#8e8e8e"
+    color: "#A576FF"
     features:
     - text: Inizieremo una partnership con i punti definiti durante la call.
       highlight: true
@@ -30,6 +30,15 @@ faq:
     answer: Contattaci per qualsiasi domanda <a href="#">coding@bunker.it</a>.
 ---
 
+<style media="screen">
+  .wrapper {
+    text-align: center;
+  }
+  .responsive {
+    width:35%;
+    height: auto;
+  }
+</style>
 
 <div class="plans">
 	{% for plan in page.partner_info %}
@@ -43,7 +52,22 @@ faq:
     </ul>
     {% endfor %}
 </div>
-<button type="button" style="text-align:center">Invia la richiesta</button>
+<div class="wrapper">
+    <a href="#"><button class="button">Invia la richiesta</button></a>
+</div>
+
+<br>
+<br>
+<br>
+
+
+<div class="wrapper">
+  <h2>I nostri partner</h2>
+  <p class="wrapper">Ecco i nostri attuali partner con cui stiamo attualmente collaborando.</p>
+    <a href="https://www.codemotion.com/">
+      <img src="{{ site.baseurl }}/images/codemotion.png" alt="codemotion" class="responsive"/>
+    </a>
+</div>
 
 
 <div>
