@@ -1,0 +1,85 @@
+---
+title: Partner
+heading: Come diventare nostro Partner
+description: In questa sezione ti spieghiamo perché diventare nostro partner e come puoi entrare in contatto con noi per discutere assieme di nuove iniziative e percorsi che possiamo intraprendere.
+partner_info:
+  - name: Invia la richiesta online
+    color: "#A576FF"
+    features:
+      - text: Clicca al bottone qui sotto e verrai rimandato ad un form.
+        highlight: true
+  - name: Ti contattiamo noi
+    color: "#A576FF"
+    features:
+    - text: Entro 15 giorni organizzeremo una call insieme.
+      highlight: true
+  - name: Iniziamo a collaborare
+    color: "#A576FF"
+    features:
+    - text: Inizieremo una partnership con i punti definiti durante la call.
+      highlight: true
+
+faq:
+  - question: Sono adatto a collaborare con voi?
+    answer: Vogliamo entrare in contatto con professionisti ed aziende che hanno i nostri stessi valori e che vogliono avere un impatto considerevole nel mondo dell'informatica ma anche in settori correlati. Se pensi che il nostro progetto possa apportare valore alla tua attività, invia la richiesta per diventare nostro partner.
+  - question: Perchè dovrei diventare vostro partner?
+    answer: Perchè siamo una community attiva sempre in cerca di nuovi stimoli!
+  - question: Quali sono i punti cardine della nostra (eventuale) collaborazione?
+    answer: I punti principali su cui facciamo leva sono i seguenti; pubblicare offerte di lavoro, avviare progetti open source per apprendimento o beneficienza, offrire servizi di tutoring e corsi.
+  - question: Ho molti altri dubbi...
+    answer: Contattaci per qualsiasi domanda <a href="#">coding@bunker.it</a>.
+---
+
+<style media="screen">
+  .wrapper {
+    text-align: center;
+  }
+  .responsive {
+    width:35%;
+    height: auto;
+  }
+</style>
+
+<div class="plans">
+	{% for plan in page.partner_info %}
+		<ul class="plan">
+			<li style="background: {{ plan.color }}">
+				<h3>{{ plan.name }}</h3>
+			</li>
+			{% for feature in plan.features %}
+				<li {% if feature.highlight %} class="highlighted"{% endif %}>{{ feature.text }}</li>
+			{% endfor %}
+    </ul>
+    {% endfor %}
+</div>
+<div class="wrapper">
+    <a href="#"><button class="button">Invia la richiesta</button></a>
+</div>
+
+<br>
+<br>
+<br>
+
+
+<div class="wrapper">
+  <h2>I nostri partner</h2>
+  <p class="wrapper">Ecco i nostri attuali partner con cui stiamo attualmente collaborando.</p>
+    <a href="https://www.codemotion.com/">
+      <img src="{{ site.baseurl }}/images/codemotion.png" alt="codemotion" class="responsive"/>
+    </a>
+</div>
+
+
+<div>
+{% if page.faq %}
+	<h2>FAQ</h2>
+	<dl class="faq">
+		{% for item in page.faq %}
+			<div>
+				<dt>{{ item.question }}</dt>
+				<dd>{{ item.answer }}</dd>
+			</div>
+		{% endfor %}
+	</dl>
+{% endif %}
+</div>

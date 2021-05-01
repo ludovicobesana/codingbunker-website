@@ -1,5 +1,5 @@
 - name: Chi siamo
-  link: /pricing/
+  link: /chi-siamo/
   new_window: false
   highlight: false
 - name: Gli eventi
@@ -7,7 +7,7 @@
   new_window: false
   highlight: false
 - name: I partner
-  link: /about/
+  link: /partner/
   new_window: false
   highlight: false
 - name: Hall of Fame
@@ -15,7 +15,7 @@
   new_window: false
   highlight: false
 - name: Sostienici
-  link: /contact/
+  link: /sostienici/
   new_window: false
   highlight: false
 - name: Blog
