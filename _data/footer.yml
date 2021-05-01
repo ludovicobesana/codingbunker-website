@@ -1,38 +1,38 @@
 - links:
-  - name: Pricing
-    link: /pricing/
-  - name: Blog
+  - name: Chi siamo
+    link: /chi-siamo/
+  - name: Gli Eventi
     link: /blog/
-  - name: About
+  - name: I partner
     link: /about/
-  - name: Contact
+  - name: Hall of Fame
     link: /contact/
 - links:
-  - name: Login
+  - name: Sostienici
     link: /
     new_window: true
-  - name: Sign Up
+  - name: Blog
     link: /
     new_window: true
-  - name: Docs
-    link: /
-    new_window: true
-  - name: Status
+  - name: Entra ora
     link: /
     new_window: true
 - links:
-  - name: Facebook
-    link: https://facebook.com/cloudcannon/
+  - name: Instagram
+    link: https://www.instagram.com/codingbunker/
     new_window: true
-    social_icon: Facebook
-  - name: Twitter
-    link: https://twitter.com/cloudcannon/
-    social_icon: Twitter
+    social_icon: Instagram
+    
+  - name: LinkedIn
+    link: https://www.linkedin.com/company/coding-bunker/
+    social_icon: LinkedIn
     new_window: true
+    
   - name: YouTube
-    link: https://youtube.com/cloudcannon/
+    link: https://www.youtube.com/channel/UCVkl7yf00zC1xGuN-nQf9hA
     social_icon: YouTube
     new_window: true
+    
   - name: RSS
     link: /feed.xml
     social_icon: RSS
