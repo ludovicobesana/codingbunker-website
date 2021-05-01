@@ -1,27 +1,27 @@
-- name: Chi siamo
-  link: /chi-siamo/
-  new_window: false
-  highlight: false
-- name: Gli eventi
-  link: /pricing/
-  new_window: false
-  highlight: false
+# - name: Chi siamo
+#   link: /chi-siamo/
+#   new_window: false
+#   highlight: false
+# - name: Gli eventi
+#   link: /pricing/
+#   new_window: false
+#   highlight: false
 - name: I partner
   link: /partner/
   new_window: false
   highlight: false
-- name: Hall of Fame
-  link: /contact/
-  new_window: false
-  highlight: false
+# - name: Hall of Fame
+#   link: /contact/
+#   new_window: false
+#   highlight: false
 - name: Sostienici
   link: /sostienici/
   new_window: false
   highlight: false
-- name: Blog
-  link: /blog/
-  new_window: false
-  highlight: false
+# - name: Blog
+#   link: /blog/
+#   new_window: false
+#   highlight: false
 
 - name: Entra nel Bunker
   link: https://discord.gg/9x4FqmTxDu

@@ -1,22 +1,21 @@
 - links:
-  - name: Chi siamo
-    link: /chi-siamo/
-  - name: Gli Eventi
-    link: /blog/
+  # - name: Chi siamo
+  #   link: /chi-siamo/
+  # - name: Gli Eventi
+  #   link: /blog/
   - name: I partner
     link: /about/
-  - name: Hall of Fame
-    link: /contact/
-- links:
   - name: Sostienici
-    link: /
-    new_window: true
-  - name: Blog
-    link: /
+    link: /sostienici/
     new_window: true
   - name: Entra ora
-    link: /
-    new_window: true
+    link: https://discord.gg/9x4FqmTxDu
+    new_window: true  
+  # - name: Hall of Fame
+  #   link: /contact/
+
+  # - name: Blog
+  #   link: /blog/
 - links:
   - name: Instagram
     link: https://www.instagram.com/codingbunker/
