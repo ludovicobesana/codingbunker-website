@@ -1,28 +1,29 @@
 {
-  "name": "portofolio",
-  "type": "module",
-  "version": "0.0.1",
-  "license": "Apache-2.0",
+  "name": "new-website",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "next dev",
+    "export": "next export",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.9",
-    "@astrojs/tailwind": "^5.1.0",
-    "@tabler/icons": "^3.0.2",
-    "astro": "^4.5.3",
-    "sharp": "^0.33.2",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.2"
+    "@getbrevo/brevo": "^2.2.0",
+    "axios": "^1.7.2",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.11.28",
-    "daisyui": "^4.7.3",
-    "vite": "^5.1.7"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
