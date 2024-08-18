@@ -1,13 +1,19 @@
 import NotionDatabaseEventsQueryProperties from '@/types/NotionDatabaseEventsQueryProperties'
 import NotionDatabaseQueryType from '@/types/NotionDatabaseQueryType'
 import axios, { AxiosRequestConfig } from 'axios'
-
+import { Client as NotionClient }  from '@notionhq/client'
+import { DatabaseObjectResponse, PageObjectResponse, PartialDatabaseObjectResponse, PartialPageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 
 
 const NotionApiClient = () =>{
 
-    //<T = any, R = AxiosResponse<T>, D = any>(config: AxiosRequestConfig<D>): Promise<R>
-    const request = (config: AxiosRequestConfig): Promise<any> =>{
+    const notionClient = (): NotionClient =>{
+        return new NotionClient({
+            auth:process.env.NOTION_TOKEN,
+        })
+
+    }
+    const request = (config: AxiosRequestConfig): any =>{
         return axios.request({
             baseURL: "https://api.notion.com",
             headers: {
@@ -33,6 +39,24 @@ const NotionApiClient = () =>{
         })
 
         return response.data?.results?.[0]
+    }
+
+    const fetchLastEvents = async () : Promise<(PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse)[]> => {
+        if(!process.env.NOTION_EVENTS_DATABASE) return [];
+        const data = await notionClient().databases.query({
+            database_id: process.env.NOTION_EVENTS_DATABASE,
+            archived: false,
+            in_trash: false,
+            page_size:3,
+            sorts: [
+                {
+                    direction: "descending",
+                    property: "Date"
+                }
+            ]
+        })
+        
+        return data.results;
     }
 
     const fetchEvents = async () : Promise<NotionDatabaseQueryType<NotionDatabaseEventsQueryProperties>> => {
@@ -68,7 +92,8 @@ const NotionApiClient = () =>{
         fetchEvents,
         fetchSingleEvent,
         fetchCrew,
-        addSubscriber
+        addSubscriber,
+        fetchLastEvents
     }
 
 }
