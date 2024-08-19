@@ -1,5 +1,4 @@
 export const getPlainTextFromBlock = (block: any) : string | undefined => {
-    console.log(block.type)
     if(block.type == "rich_text"){
         return block?.rich_text?.[0]?.plain_text
     }else if(block.type == "title"){
@@ -7,4 +6,8 @@ export const getPlainTextFromBlock = (block: any) : string | undefined => {
     }else if(block.type == "date"){
         return block?.date?.start
     }
+}
+
+export const getUrl = (block: any) : string | undefined => {
+    return block.url
 }

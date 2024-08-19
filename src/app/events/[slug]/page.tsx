@@ -1,4 +1,7 @@
 import NotionApiClient from "@/apiClient/NotionApiClient"
+import VideoPlayer from "@/components/VideoPlayer"
+import { getPlainTextFromBlock, getUrl } from "@/utils/NotionFormatter"
+import Link from "next/link"
 
 
 
@@ -10,8 +13,28 @@ export default async function SingleEvent({
 
     const pageData = await NotionApiClient().fetchSingleEvent(slug)
 
-    //console.log(pageData)
-    return <h1>{JSON.stringify(pageData)}Hello, Singleenver.js!</h1>
+    const videoUrl = getUrl(pageData?.properties?.["Video Url"])
+    const registrationLink = getUrl(pageData?.properties["Registration Link"]) 
+
+    console.log(pageData?.properties)
+    return <>
+      <h1>{getPlainTextFromBlock(pageData?.properties["Name"])}</h1>
+      <p>{getPlainTextFromBlock(pageData?.properties["Description"])}</p>
+      <p>{getPlainTextFromBlock(pageData?.properties["Speaker Description"])}</p>
+      <p>{getPlainTextFromBlock(pageData?.properties["Venue"])}</p>
+
+      <p>{getPlainTextFromBlock(pageData?.properties["Date"])}</p>
+
+      <p>{getPlainTextFromBlock(pageData?.properties["Venue Map Link"])}</p>
+
+      {videoUrl && 
+        <VideoPlayer src={videoUrl} />
+      }
+
+      {registrationLink &&
+        <Link href={registrationLink} >Registrati qui</Link>
+      }
+    </>
   }
 
 

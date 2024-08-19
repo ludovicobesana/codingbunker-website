@@ -24,21 +24,22 @@ const NotionApiClient = () =>{
         })
     }
 
-    const fetchSingleEvent = async (slug: string) : Promise<NotionDatabaseEventsQueryProperties> =>{
-        const response = await request({
-            url: `v1/databases/${process.env.NOTION_EVENTS_DATABASE}/query`,
-            method: "POST",
-            data:{
-                "filter": {
-                    "property": "slug",
-                    "rich_text": {
-                        "equals": slug
-                    }
+    const fetchSingleEvent = async (slug: string) : Promise<undefined | PageObjectResponse> =>{
+        if(!process.env.NOTION_EVENTS_DATABASE) return undefined;
+        const data = await notionClient().databases.query({
+            database_id: process.env.NOTION_EVENTS_DATABASE,
+            archived: false,
+            in_trash: false,
+            page_size:1,
+            filter:{
+                property: "slug",
+                rich_text: {
+                    equals: slug
                 }
             }
         })
-
-        return response.data?.results?.[0]
+        
+        return data.results?.[0] as PageObjectResponse;
     }
 
     const fetchLastEvents = async () : Promise<(PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse)[]> => {
