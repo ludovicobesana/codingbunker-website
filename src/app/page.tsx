@@ -22,59 +22,56 @@ const Home = async () => {
             Il nostro obiettivo è creare un ambiente inclusivo dove tutti, dai
             principianti agli esperti, possono trovare supporto, imparare e
             crescere insieme.
-          </p>{" "}
+          </p>
           <p>
             Unisciti a noi per crescere, imparare e fare la differenza insieme!
           </p>
           <div className="custom-breadcrumbs">
-            {" "}
             <ul>
-              {" "}
               <li>
-                {" "}
                 <a
                   href="https://forms.gle/FPca5upst1VTGFP86"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  {" "}
-                  Partnership{" "}
-                </a>{" "}
+                  
+                  Partnership
+                </a>
               </li>
               <li>
-                {" "}
+                
                 <a
                   href="https://forms.gle/okz6VZ9Uv8JcGTiS8"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  {" "}
-                  Cfp{" "}
-                </a>{" "}
+                  
+                  Cfp
+                </a>
               </li>
               <li>
-                {" "}
+                
                 <a
                   href="https://github.com/Coding-Bunker"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  {" "}
-                  Github{" "}
-                </a>{" "}
+                  
+                  Github
+                </a>
               </li>
               <li>
-                {" "}
+                
                 <a
                   href="https://discord.com/invite/9x4FqmTxDu"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  {" "}
-                  Discord{" "}
-                </a>{" "}
-              </li>{" "}
-            </ul>{" "}
+                  
+                  Discord
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -91,15 +88,15 @@ const Home = async () => {
 
       <article className="flex flex-col gap-8">
         <header className="flex w-full flex-row justify-between gap-2">
-          {" "}
-          <h3 className="text-lg">Ultimi eventi</h3>{" "}
+          
+          <h3 className="text-lg">Ultimi eventi</h3>
           <Link
             href="/events"
             className="text-sm text-white underline decoration-dashed underline-offset-8"
             rel="noreferrer"
           >
             Tutti i nostri eventi
-          </Link>{" "}
+          </Link>
         </header>
         <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 mx-auto">
           {lastEvents.map((event) => (
