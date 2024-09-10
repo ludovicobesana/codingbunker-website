@@ -14,6 +14,7 @@ import DiscordImage from "../assets/social/discord.svg";
 
 const Home = async () => {
   const lastEvents = await NotionApiClient().fetchLastEvents();
+  const nextEvent = await NotionApiClient().fetchNextEvent();
 
 
   return (
@@ -33,68 +34,60 @@ const Home = async () => {
           <p>
             Unisciti a noi per crescere, imparare e fare la differenza insieme!
           </p>
-          <div className="custom-breadcrumbs">
-            <ul>
-              <li>
-                <a
+          <div className="flex flex-row gap-6">
+              <a
+                  className="group flex cursor-pointer flex-col gap-2 rounded-md border text-white p-2 transition-all duration-300 hover:bg-white hover:text-purple"
                   href="https://forms.gle/FPca5upst1VTGFP86"
                   rel="noreferrer"
                   target="_blank"
                 >
                   
-                  Partnership
+                  Diventa nostro partner
                 </a>
-              </li>
-              <li> 
                 <a
+                  className="group flex cursor-pointer flex-col gap-2 rounded-md border text-white p-2 transition-all duration-300 hover:bg-white hover:text-purple"
                   href="https://forms.gle/okz6VZ9Uv8JcGTiS8"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  
-                  Cfp
+                  Proponi il tuo talk
                 </a>
-              </li>
-              <li> 
+          </div>
+          <div className="custom-breadcrumbs flex flex-row gap-4 text-right items-center justify-end">
                 <a
                   href="https://www.meetup.com/coding-bunker/"
+                  className="hover:scale-150 transition duration-300"
                   rel="noreferrer"
                   target="_blank"
                 >
                   
-                  <Image width={20} height={20} src={MeetupImage} alt="Meetup" />
+                  <Image width={30} height={30} src={MeetupImage} alt="Meetup" />
                 </a>
-              </li>
-              <li>
-                
                 <a
                   href="https://github.com/Coding-Bunker"
+                  className="hover:scale-150 transition duration-300"
                   rel="noreferrer"
                   target="_blank"
                 >
-                 <Image width={20} height={20} src={GithubImage} alt="Github" />
+                 <Image width={30} height={30} src={GithubImage} alt="Github" />
                 </a>
-              </li>
-              <li>
-                
                 <a
                   href="https://discord.com/invite/9x4FqmTxDu"
+                  className="hover:scale-150 transition duration-300"
                   rel="noreferrer"
                   target="_blank"
-                >
-                  
-                  <Image width={20} height={20} src={DiscordImage} alt="Discord" />
+                >                  
+                  <Image width={30} height={30} src={DiscordImage} alt="Discord" />
                 </a>
                 <a
                   href="https://t.me/codingbunker"
+                  className="hover:scale-150 transition duration-300"
                   rel="noreferrer"
                   target="_blank"
                 >
                   
-                  <Image width={20} height={20} src={TelegramImage} alt="Telegram" />
+                  <Image width={30} height={30} src={TelegramImage} alt="Telegram" />
                 </a>
-              </li>
-            </ul>
           </div>
         </div>
 
@@ -110,8 +103,16 @@ const Home = async () => {
       </article>
 
       <article className="flex flex-col gap-8">
+        {nextEvent && 
+          <header className="flex flex-col justify-between gap-2 mt-10">
+            <h3 className="text-lg font-bold">Registrati al prossimo evento</h3>
+            <SingleEventCard
+                  className="border-4"
+                  event={nextEvent as PageObjectResponse}
+                />
+          </header>
+        }
         <header className="flex w-full flex-row justify-between gap-2 mt-10">
-          
           <h3 className="text-lg font-bold">Ultimi eventi</h3>
           <Link
             href="/events"

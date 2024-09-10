@@ -12,12 +12,21 @@ export const metadata: Metadata = {
 export default async function Page() {
 
     const pageData = await NotionApiClient().fetchEvents()
+    const nextEvent = await NotionApiClient().fetchNextEvent();
 
     return <>
-      <h1 className="text-4xl font-bold mb-8">Tutti i nostri eventi</h1>
-
+      <h1 className="text-4xl font-bold mb-8">I nostri eventi</h1>
+      {nextEvent && 
+          <header className="flex flex-col justify-between gap-2 mt-5 mb-20">
+            <h3 className="text-lg font-bold">Registrati al prossimo evento</h3>
+            <SingleEventCard
+                  className="border-4"
+                  event={nextEvent as PageObjectResponse}
+                />
+          </header>
+      }
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 mx-auto">
-        {pageData.results.map((event : any) => (
+        {pageData.map((event : any) => (
             <SingleEventCard
               event={event as PageObjectResponse}
               key={event.id}

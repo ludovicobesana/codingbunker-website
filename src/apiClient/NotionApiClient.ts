@@ -9,6 +9,7 @@ import {
   PartialPageObjectResponse,
   QueryDatabaseResponse,
 } from "@notionhq/client/build/src/api-endpoints"
+import { DateTime } from "luxon"
 
 const NotionApiClient = () => {
   const notionClient = (): NotionClient => {
@@ -47,6 +48,36 @@ const NotionApiClient = () => {
     return data.results?.[0] as PageObjectResponse
   }
 
+  const fetchNextEvent = async (): Promise<
+    | PageObjectResponse
+    | PartialPageObjectResponse
+    | PartialDatabaseObjectResponse
+    | DatabaseObjectResponse
+    | undefined
+  > => {
+    if (!process.env.NOTION_EVENTS_DATABASE) return undefined
+    const data = await notionClient().databases.query({
+      database_id: process.env.NOTION_EVENTS_DATABASE,
+      archived: false,
+      in_trash: false,
+      page_size: 1,
+      sorts: [
+        {
+          direction: "ascending",
+          property: "Date",
+        },
+      ],
+      filter: {
+        property: "Date",
+        date: {
+          after: DateTime.now().toFormat("yyyy-MM-dd"),
+        },
+      },
+    })
+
+    return data.results?.[0]
+  }
+
   const fetchLastEvents = async (): Promise<
     (
       | PageObjectResponse
@@ -67,20 +98,46 @@ const NotionApiClient = () => {
           property: "Date",
         },
       ],
+      filter: {
+        property: "Date",
+        date: {
+          before: DateTime.now().toFormat("yyyy-MM-dd"),
+        },
+      },
     })
 
     return data.results
   }
 
   const fetchEvents = async (): Promise<
-    NotionDatabaseQueryType<NotionDatabaseEventsQueryProperties>
+    (
+      | PageObjectResponse
+      | PartialPageObjectResponse
+      | PartialDatabaseObjectResponse
+      | DatabaseObjectResponse
+    )[]
   > => {
-    const response = await request({
-      url: `v1/databases/${process.env.NOTION_EVENTS_DATABASE}/query`,
-      method: "POST",
+    if (!process.env.NOTION_EVENTS_DATABASE) return []
+    const data = await notionClient().databases.query({
+      database_id: process.env.NOTION_EVENTS_DATABASE,
+      archived: false,
+      in_trash: false,
+      page_size: 1000,
+      sorts: [
+        {
+          direction: "descending",
+          property: "Date",
+        },
+      ],
+      filter: {
+        property: "Date",
+        date: {
+          before: DateTime.now().toFormat("yyyy-MM-dd"),
+        },
+      },
     })
 
-    return response.data
+    return data.results
   }
 
   const fetchCrew = async (): Promise<QueryDatabaseResponse | undefined> => {
@@ -109,6 +166,7 @@ const NotionApiClient = () => {
     fetchCrew,
     addSubscriber,
     fetchLastEvents,
+    fetchNextEvent,
   }
 }
 
