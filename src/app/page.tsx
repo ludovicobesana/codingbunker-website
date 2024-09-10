@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Home = async () => {
   const lastEvents = await NotionApiClient().fetchLastEvents();
-  console.log(lastEvents);
+
 
   return (
     <>

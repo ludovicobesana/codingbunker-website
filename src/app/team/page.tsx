@@ -3,8 +3,8 @@ import { getPlainTextFromBlock } from "@/utils/NotionFormatter"
 import Image from "next/image"
 
 const TeamMember : React.FC<any> =(props) =>{
-  //console.log(props)
-  console.log(props?.properties?.["Profile Image"]?.files?.[0]?.file?.url)
+  
+  
   return <div className="group flex flex-col gap-2 rounded-md border text-white p-4">
       <div className="text-center flex-1 flex justify-center">
       <Image className="rounded-full" height={200} width={200} src={props?.properties?.["Profile Image"]?.files?.[0]?.file?.url} alt={getPlainTextFromBlock(props?.properties?.["Name"]) || ""} />
