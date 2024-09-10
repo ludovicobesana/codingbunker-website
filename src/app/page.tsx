@@ -87,9 +87,9 @@ const Home = async () => {
       </article>
 
       <article className="flex flex-col gap-8">
-        <header className="flex w-full flex-row justify-between gap-2">
+        <header className="flex w-full flex-row justify-between gap-2 mt-10">
           
-          <h3 className="text-lg">Ultimi eventi</h3>
+          <h3 className="text-lg font-bold">Ultimi eventi</h3>
           <Link
             href="/events"
             className="text-sm text-white underline decoration-dashed underline-offset-8"

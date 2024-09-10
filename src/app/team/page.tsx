@@ -1,5 +1,6 @@
 import NotionApiClient from "@/apiClient/NotionApiClient"
 import { getPlainTextFromBlock } from "@/utils/NotionFormatter"
+import { Metadata } from "next"
 import Image from "next/image"
 
 const TeamMember : React.FC<any> =(props) =>{
@@ -12,6 +13,11 @@ const TeamMember : React.FC<any> =(props) =>{
       <p className="font-bold text-xl">{getPlainTextFromBlock(props?.properties?.["Name"])}</p>
       <p>{getPlainTextFromBlock(props?.properties?.["Description"])}</p>
   </div>
+}
+
+export const metadata: Metadata = {
+  title: 'Team | Coding bunker',
+  description: 'Coding Bunker Team',
 }
 
 export default async function Page() {
