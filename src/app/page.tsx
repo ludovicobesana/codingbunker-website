@@ -5,6 +5,13 @@ import SingleEventCard from "@/components/SingleEventCard";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import Link from "next/link";
 
+import InstagramImage from "../assets/social/instagram.svg";
+import LinkedinImage from "../assets/social/linkedin.svg";
+import MeetupImage from "../assets/social/meetup.svg";
+import GithubImage from "../assets/social/github.svg";
+import TelegramImage from "../assets/social/telegram.svg";
+import DiscordImage from "../assets/social/discord.svg";
+
 const Home = async () => {
   const lastEvents = await NotionApiClient().fetchLastEvents();
 
@@ -38,8 +45,7 @@ const Home = async () => {
                   Partnership
                 </a>
               </li>
-              <li>
-                
+              <li> 
                 <a
                   href="https://forms.gle/okz6VZ9Uv8JcGTiS8"
                   rel="noreferrer"
@@ -49,6 +55,16 @@ const Home = async () => {
                   Cfp
                 </a>
               </li>
+              <li> 
+                <a
+                  href="https://www.meetup.com/coding-bunker/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  
+                  <Image width={20} height={20} src={MeetupImage} alt="Meetup" />
+                </a>
+              </li>
               <li>
                 
                 <a
@@ -56,8 +72,7 @@ const Home = async () => {
                   rel="noreferrer"
                   target="_blank"
                 >
-                  
-                  Github
+                 <Image width={20} height={20} src={GithubImage} alt="Github" />
                 </a>
               </li>
               <li>
@@ -68,7 +83,15 @@ const Home = async () => {
                   target="_blank"
                 >
                   
-                  Discord
+                  <Image width={20} height={20} src={DiscordImage} alt="Discord" />
+                </a>
+                <a
+                  href="https://t.me/codingbunker"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  
+                  <Image width={20} height={20} src={TelegramImage} alt="Telegram" />
                 </a>
               </li>
             </ul>

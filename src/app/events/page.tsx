@@ -3,6 +3,7 @@ import SingleEventCard from "@/components/SingleEventCard"
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints"
 import { Metadata } from "next"
 
+
 export const metadata: Metadata = {
   title: 'Events | Coding bunker',
   description: 'Coding Bunker Events',
