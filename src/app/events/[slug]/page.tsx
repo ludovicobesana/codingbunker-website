@@ -97,14 +97,15 @@ export default async function Page({
 
 
 
-export async function generateStaticParams() : Promise<any[]> {
+export async function generateStaticParams() : Promise<{ slug: string }[]> {
     try{
+        console.log("generateStaticParams")
         const talks = await NotionApiClient().fetchEvents()
         const out =  talks.map(single =>{
             return {
                 slug: getPlainTextFromBlock((single as PageObjectResponse)?.properties?.slug)
             }
-        }).filter(e => e.slug)
+        }).filter(e => e.slug) as { slug: string }[]
         return out
     }catch(e){
         console.log(e)
