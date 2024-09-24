@@ -26,7 +26,7 @@ export async function generateMetadata(
 }
  
 
-export default async function SingleEvent({
+export default async function Page({
     params: { slug },
   }: {
     params: { slug: string }
