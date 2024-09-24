@@ -23,7 +23,7 @@ const Home = async () => {
         <div className="flex flex-col gap-6 my-auto max-w-md md:max-w-lg md:w-2/3">
           <h1 className="text-3xl font-bold">Benvenutə in Coding Bunker</h1>
           <h2 className="text-xl leading-6">
-            La tua porta d'accesso ad una Community dinamica di appassionati e
+            La tua porta d&apos;accesso ad una Community dinamica di appassionati e
             appassionate di programmazione e tecnologia!
           </h2>
           <p>
