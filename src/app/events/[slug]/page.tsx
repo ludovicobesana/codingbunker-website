@@ -109,6 +109,7 @@ export async function generateStaticParams() : Promise<{ slug: string }[]> {
         }).filter(e => e.slug) as { slug: string }[]
         return out
     }catch(e){
+      console.log("We had an error", e)
         console.log(e)
         return []
     }
