@@ -5,6 +5,7 @@ import { Metadata, ResolvingMetadata } from "next"
 import Image from "next/image"
 import {DateTime} from 'luxon'
 import Link from "next/link"
+import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints"
 
 type Props = {
   params: { slug: string }
@@ -77,7 +78,7 @@ export default async function SingleEvent({
           className="mt-4 inline-block text-white py-2 px-4 rounded border transition-all duration-300 hover:-translate-y-1.5"
           target="_blank"
           rel="noreferrer"
-        >Vai all'evento</a>
+        >Vai all&apos;evento</a>
           }
           </div>
       </div>
@@ -99,9 +100,9 @@ export default async function SingleEvent({
 export async function generateStaticParams() : Promise<any[]> {
     try{
         const talks = await NotionApiClient().fetchEvents()
-        const out =  talks.results.map(single =>{
+        const out =  talks.map(single =>{
             return {
-                slug: single?.properties?.slug?.rich_text?.[0]?.plain_text
+                slug: getPlainTextFromBlock((single as PageObjectResponse)?.properties?.slug)
             }
         }).filter(e => e.slug)
         return out
