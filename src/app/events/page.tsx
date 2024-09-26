@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
 
-    const pageData = await NotionApiClient().fetchEvents()
+    const pageData = await NotionApiClient().fetchPastEvents()
     const nextEvent = await NotionApiClient().fetchNextEvent();
 
     return <>
