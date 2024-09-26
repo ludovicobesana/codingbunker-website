@@ -109,7 +109,7 @@ const NotionApiClient = () => {
     return data.results
   }
 
-  const fetchEvents = async (): Promise<
+  const fetchPastEvents = async (): Promise<
     (
       | PageObjectResponse
       | PartialPageObjectResponse
@@ -132,9 +132,34 @@ const NotionApiClient = () => {
       filter: {
         property: "Date",
         date: {
-          before: DateTime.now().toFormat("yyyy-MM-dd"),
+          before: DateTime.now().toFormat("yyyy-MM-dd HH:mm"),
         },
       },
+    })
+
+    return data.results
+  }
+
+  const fetchAllEvents = async (): Promise<
+    (
+      | PageObjectResponse
+      | PartialPageObjectResponse
+      | PartialDatabaseObjectResponse
+      | DatabaseObjectResponse
+    )[]
+  > => {
+    if (!process.env.NOTION_EVENTS_DATABASE) return []
+    const data = await notionClient().databases.query({
+      database_id: process.env.NOTION_EVENTS_DATABASE,
+      archived: false,
+      in_trash: false,
+      page_size: 1000,
+      sorts: [
+        {
+          direction: "descending",
+          property: "Date",
+        },
+      ],
     })
 
     return data.results
@@ -161,7 +186,8 @@ const NotionApiClient = () => {
   }
 
   return {
-    fetchEvents,
+    fetchPastEvents,
+    fetchAllEvents,
     fetchSingleEvent,
     fetchCrew,
     addSubscriber,
