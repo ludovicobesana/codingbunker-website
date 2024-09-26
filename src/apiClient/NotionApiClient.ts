@@ -132,7 +132,7 @@ const NotionApiClient = () => {
       filter: {
         property: "Date",
         date: {
-          before: DateTime.now().toFormat("yyyy-MM-dd"),
+          before: DateTime.now().toFormat("yyyy-MM-dd HH:mm"),
         },
       },
     })
