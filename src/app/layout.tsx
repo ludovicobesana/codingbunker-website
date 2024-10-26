@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     images: TeamImage.src,
     type: "website",
     locale: "it_IT",
-    url: "https://codingbunker.it",
+    url: "https://www.codingbunker.it",
   },
 }
 
