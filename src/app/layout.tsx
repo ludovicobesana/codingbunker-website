@@ -6,7 +6,7 @@ import TeamImage from "../assets/team/team.png"
 
 export const metadata: Metadata = {
   title: "Coding bunker",
-  icons: "/favicon.svg",
+  icons: "/favicon.ico",
   openGraph: {
     title: "Coding bunker",
     description:
