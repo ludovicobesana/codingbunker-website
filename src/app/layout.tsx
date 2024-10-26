@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Coding bunker",
-  icons: "/favicon.svg"
+  icons: "/favicon.ico"
   
 };
 
