@@ -1,4 +1,4 @@
- Contributing to [Project Name]
+ # Contributing to Coding Bunker Website
 
 Thank you for considering contributing to Coding Bunker Website! We welcome all contributions, big and small. Please follow the guidelines below to get started.
 
