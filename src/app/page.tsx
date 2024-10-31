@@ -134,6 +134,39 @@ const Home = async () => {
           ))}
         </section>
         <header className="flex w-full flex-row justify-between gap-2 mt-10">
+          <h3 className="text-lg font-bold">Dicono di noi</h3>       
+        </header>
+        <section className="grid grid-cols-1 gap-6 md:grid-cols-3 mt-4">
+          <div className="bg-white p-4 rounded-lg shadow-lg">
+            <p className="text-sm italic text-gray-700">
+              &quot;Un&apos;esperienza fantastica! Coding Bunker ha una community accogliente e molti eventi interessanti. Altamente consigliato!&quot;
+            </p>
+            <p className="mt-2 text-right font-bold text-black">- Alessandro R.</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-lg">
+            <p className="text-sm italic text-gray-700">
+              &quot;Ho trovato molti contatti utili.&quot;
+            </p>
+            <p className="mt-2 text-right font-bold text-black">- Andrea C.</p>
+          </div>
+          
+        </section> 
+  {/* 
+        <div className="flex flex-row gap-6">
+              <a
+                  className="group flex cursor-pointer flex-col gap-2 rounded-md border text-white p-2 transition-all duration-300 hover:bg-white hover:text-purple"
+                  href="https://www.meetup.com/it-IT/coding-bunker/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  
+                  Leggi tutte le recensioni
+                </a>
+        
+          </div>*/}
+
+ 
+        <header className="flex w-full flex-row justify-between gap-2 mt-10">
           <h3 className="text-lg font-bold">Partner</h3>
         </header>
         <section className="flex flex-wrap gap-4 mt-4">
