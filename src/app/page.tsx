@@ -13,6 +13,7 @@ import TelegramImage from "../assets/social/telegram.svg";
 import DiscordImage from "../assets/social/discord.svg";
 import CodemotionLogo from "../assets/partner/codemotion.png";
 import GruspLogo from "../assets/partner/grusp.png";
+import FBrodoliniLogo from "../assets/partner/fondazione-brodolini.png";
 
 const Home = async () => {
   const lastEvents = await NotionApiClient().fetchLastEvents();
@@ -136,6 +137,15 @@ const Home = async () => {
           <h3 className="text-lg font-bold">Partner</h3>
         </header>
         <section className="flex flex-wrap gap-4 mt-4">
+          <div className="flex items-center">
+          <Image
+              src={FBrodoliniLogo}
+              width={150}
+              height={150}
+              alt="Fondazione Brodolini Logo"
+              className="transform transition duration-300 hover:scale-110"
+            />
+          </div>
           <div className="flex items-center">
             <Image
               src={CodemotionLogo}
