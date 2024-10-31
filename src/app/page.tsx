@@ -11,6 +11,8 @@ import MeetupImage from "../assets/social/meetup.svg";
 import GithubImage from "../assets/social/github.svg";
 import TelegramImage from "../assets/social/telegram.svg";
 import DiscordImage from "../assets/social/discord.svg";
+import CodemotionLogo from "../assets/partner/codemotion.png";
+import GruspLogo from "../assets/partner/grusp.png";
 
 const Home = async () => {
   const lastEvents = await NotionApiClient().fetchLastEvents();
@@ -129,6 +131,29 @@ const Home = async () => {
               key={event.id}
             />
           ))}
+        </section>
+        <header className="flex w-full flex-row justify-between gap-2 mt-10">
+          <h3 className="text-lg font-bold">Partner</h3>
+        </header>
+        <section className="flex flex-wrap gap-4 mt-4">
+          <div className="flex items-center">
+            <Image
+              src={CodemotionLogo}
+              width={150}
+              height={150}
+              alt="Codemotion Logo"
+              className="transform transition duration-300 hover:scale-110"
+            />
+          </div>
+          <div className="flex items-center">
+            <Image
+              src={GruspLogo}
+              width={150}
+              height={150}
+              alt="GrUSP Logo"
+              className="transform transition duration-300 hover:scale-110"
+            />
+          </div>
         </section>
       </article>
     </>
