@@ -37,22 +37,31 @@ const Home = async () => {
             Unisciti a noi per crescere, imparare e fare la differenza insieme!
           </p>
           <div className="flex flex-row gap-6">
-            <a
-              className="group flex cursor-pointer flex-col gap-2 rounded-md border text-white p-2 transition-all duration-300 hover:bg-white hover:text-purple"
-              href="https://forms.gle/FPca5upst1VTGFP86"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Diventa nostro partner
-            </a>
-            <a
-              className="group flex cursor-pointer flex-col gap-2 rounded-md border text-white p-2 transition-all duration-300 hover:bg-white hover:text-purple"
-              href="https://forms.gle/okz6VZ9Uv8JcGTiS8"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Proponi il tuo talk
-            </a>
+              <a
+                  className="group flex cursor-pointer flex-col gap-2 rounded-md border text-white p-2 transition-all duration-300 hover:bg-white hover:text-purple"
+                  href="https://forms.gle/FPca5upst1VTGFP86"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  
+                  Diventa nostro partner
+                </a>
+                <a
+                  className="group flex cursor-pointer flex-col gap-2 rounded-md border text-white p-2 transition-all duration-300 hover:bg-white hover:text-purple"
+                  href="https://forms.gle/okz6VZ9Uv8JcGTiS8"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Proponi il tuo talk
+                </a>
+                <a
+                  className="group flex cursor-pointer flex-col gap-2 rounded-md border text-white p-2 transition-all duration-300 hover:bg-white hover:text-purple"
+                  href="https://forms.gle/okz6VZ9Uv8JcGTiS8"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Submit your talk 🇬🇧
+                </a>
           </div>
           <div className="custom-breadcrumbs flex flex-row gap-4 text-right items-center justify-end">
             <a
